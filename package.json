@@ -32,7 +32,7 @@
     "progress-stream": "^2.0.0",
     "request": "^2.87.0",
     "resin-cli-visuals": "^1.4.2",
-    "resin-image-fs": "^5.0.4",
+    "resin-image-fs": "^7.2.2",
     "stream-to-string": "^1.1.0",
     "string-to-stream": "^1.1.1",
     "tar-fs": "^1.16.3",
