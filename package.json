@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/balena-os/jetson-flash#readme",
   "dependencies": {
-    "ext2fs": "^3.0.5",
+    "ext2fs": "^4.2.3",
     "file-disk": "^4.1.3",
     "fs-extra": "^6.0.1",
     "hasha": "^3.0.0",
