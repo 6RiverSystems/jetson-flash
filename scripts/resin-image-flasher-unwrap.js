@@ -19,7 +19,7 @@
 const _ = require('lodash');
 const Bluebird = require('bluebird');
 const progressStream = require('progress-stream');
-const resinfs = require('resin-image-fs');
+const resinfs = require('balena-image-fs');
 
 const { createReadStream, createWriteStream } = require('fs');
 const { getPartitions } = require('partitioninfo');
