@@ -2,9 +2,15 @@ FROM balenalib/amd64-ubuntu:focal-run-20221210
 
 WORKDIR /usr/src/app/jetson-flash
 
-
 ARG DEBIAN_FRONTEND=noninteractive
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -       && \
+RUN \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+RUN \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    apt-get update && \
     apt-get -yqq install python2                                               \
                          python3                                               \
                          python3-pip                                           \
@@ -31,4 +37,4 @@ RUN npm install
 # 6rs fork: work around https://github.com/balena-os/jetson-flash/issues/195
 # RUN wget "$bsp_url" -O "/tmp/Linux_for_Tegra.tbz2"  && tar -xvf "/tmp/Linux_for_Tegra.tbz2" -C "/tmp/" && rm /tmp/Linux_for_Tegra.tbz2
 
-CMD ["./run_http_server.sh"]
+# CMD ["./run_http_server.sh"]
