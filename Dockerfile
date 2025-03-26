@@ -28,6 +28,7 @@ COPY .  /usr/src/app/jetson-flash
 
 RUN npm install
 
-RUN wget "$bsp_url" -O "/tmp/Linux_for_Tegra.tbz2"  && tar -xvf "/tmp/Linux_for_Tegra.tbz2" -C "/tmp/" && rm /tmp/Linux_for_Tegra.tbz2
+# 6rs fork: work around https://github.com/balena-os/jetson-flash/issues/195
+# RUN wget "$bsp_url" -O "/tmp/Linux_for_Tegra.tbz2"  && tar -xvf "/tmp/Linux_for_Tegra.tbz2" -C "/tmp/" && rm /tmp/Linux_for_Tegra.tbz2
 
 CMD ["./run_http_server.sh"]
