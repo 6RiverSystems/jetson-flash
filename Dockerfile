@@ -16,6 +16,7 @@ RUN \
                          python3-pip                                           \
                          usbutils                                              \
                          lbzip2                                                \
+                         locales                                               \
                          git                                                   \
                          wget                                                  \
                          unzip                                                 \
@@ -26,7 +27,8 @@ RUN \
                          xxd                                                   \
                          lz4                                                && \
     update-alternatives --install /usr/bin/python python /usr/bin/python2 1 && \
-    pip3 install pyyaml
+    pip3 install pyyaml && \
+    locale-gen en_US.UTF-8 es_MX.UTF-8
 
 ARG bsp_url
 ARG device_type
