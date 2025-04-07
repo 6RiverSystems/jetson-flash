@@ -32,12 +32,12 @@ const readline = require("readline");
 
 const run = async options => {
 	const stat = await statAsync(options.file);
-	console.log(filePath.resolve(__dirname, '../Tegra_Software_License_Agreement-Tegra-Linux.txt'));
-	var tegraLicenseText = fileSys.readFileSync(path.resolve(__dirname, '../Tegra_Software_License_Agreement-Tegra-Linux.txt'), 'utf8');
-	console.log(tegraLicenseText);
-	console.log("The above License Agreement can be consulted at https://developer.download.nvidia.com/embedded/L4T/r35_Release_v2.1/release/Tegra_Software_License_Agreement-Tegra-Linux.txt");
 	if (options.acceptLicense != 'yes') {
-		const rl = readline.createInterface({
+		console.log(filePath.resolve(__dirname, '../Tegra_Software_License_Agreement-Tegra-Linux.txt'));
+		var tegraLicenseText = fileSys.readFileSync(path.resolve(__dirname, '../Tegra_Software_License_Agreement-Tegra-Linux.txt'), 'utf8');
+		console.log(tegraLicenseText);
+		console.log("The above License Agreement can be consulted at https://developer.download.nvidia.com/embedded/L4T/r35_Release_v2.1/release/Tegra_Software_License_Agreement-Tegra-Linux.txt");
+			const rl = readline.createInterface({
 		    input: process.stdin,
 		    output: process.stdout,
 		});
