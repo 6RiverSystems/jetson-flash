@@ -1,6 +1,6 @@
 FROM balenalib/amd64-ubuntu:focal-run-20221210
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /usr/src/app/orin-flash
 
 # Install dependencies
